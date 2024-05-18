@@ -25,19 +25,6 @@
       });
     } );
     
-    {% comment %} socket.on("status", (data) => {
-      $("#chatArea").val($("#chatArea").val() + " " + data.msg + "\n");
-      $("#chatArea").scrollTop($("#chatArea")[0].scrollHeight);
-    });
-    socket.on("message", (data)=> {
-      $("#chatArea").val($("#chatArea").val() + " " + data.msg + "\n");
-      $("#chatArea").scrollTop($("#chatArea")[0].scrollHeight);
-    });
-    $("#submit-btn").click((e) => {
-      const text = $("#chatInput").val();
-      $("#chatInput").val(" ";
-      socket.emit("text", {msg: text}));
-    }); {% endcomment %}
     const leaveRoom = () => {
       socket.emit("left", {}, () => {
         socket.disconnect();
@@ -79,7 +66,7 @@
     id="submit-btn"
     onclick="leaveRoom()"
   >
-    {% comment %} Leave chat room {% endcomment %}
+
   </button>
 </div>
 
